@@ -1,0 +1,18 @@
+%html{ html_attrs('ru') }
+	%head
+		%title Статистика загрузок
+		%meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+	%body
+		#header
+			%h1 Статистика загрузок
+		#content
+			%table
+				%tr
+					%th Имя
+					%th Количество загрузок
+					%th Последнее обращение
+				- @downloads.each do |d|
+					%tr
+						%td= d.name
+						%td= d.downloads
+						%td= d.last_download
